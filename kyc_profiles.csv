@@ -1,0 +1,9 @@
+account_id,customer_id,legal_name,customer_type,country,industry,kyc_risk_level,pep_status,onboarding_date,expected_monthly_volume
+8724731955,CUST-001,Harbour Retail Ltd,Company,UK,Retail,Low,No,2020-03-12,50000
+2769355426,CUST-002,North Street Grocers,Company,UK,Retail,Low,No,2019-07-08,35000
+1491989064,CUST-003,Global Horizon Trade,Company,UAE,Import Export,High,No,2021-11-19,250000
+8401255335,CUST-004,Westbridge Imports,Company,UAE,Wholesale,Medium,No,2022-01-20,120000
+7401327478,CUST-005,Blue Nile Trading,Company,Sudan,Import Export,High,No,2022-04-02,300000
+4336451277,CUST-006,Golden Crescent Exchange,Company,UAE,Money Service Business,High,No,2021-05-14,500000
+5376652437,CUST-007,Alexander Volkov,Individual,Russia,Consulting,High,Yes,2020-09-01,90000
+9600420220,CUST-008,Maria Petrova,Individual,Russia,Energy,High,Yes,2021-02-15,110000

@@ -1,0 +1,14 @@
+# Local Python environment and caches
+.venv/
+__pycache__/
+*.py[cod]
+
+# Streamlit and local runtime files
+.streamlit/secrets.toml
+manual_override_audit.csv
+
+# Large source dataset (distribute separately; GitHub blocks files over 100 MB)
+SAML-D.csv
+
+# macOS
+.DS_Store
