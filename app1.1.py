@@ -20,6 +20,7 @@ from difflib import SequenceMatcher
 import re
 import os
 from pathlib import Path
+import joblib
 
 from datetime import datetime, timedelta
 
@@ -46,6 +47,9 @@ SANCTIONS_PATH = BASE_DIR / "sanctions_list.csv"
 KYC_PATH = BASE_DIR / "kyc_profiles.csv"
 BEST_PARAMS_PATH = BASE_DIR / "best_params.json"
 AUDIT_LOG_PATH = BASE_DIR / "manual_override_audit.csv"
+MODEL_BUNDLE_PATH = Path(
+    os.getenv("AML_MODEL_BUNDLE_PATH", BASE_DIR / "aml_model_bundle.joblib")
+).resolve()
 
 # Load the complete dataset by default. Set AML_MAX_ROWS to a positive number
 # when a smaller local sample is needed.
@@ -314,7 +318,21 @@ def load_data():
     return df
 
 
-raw_df = load_data()
+@st.cache_resource
+def load_model_bundle(path, modified_time):
+    del modified_time  # Included so Streamlit invalidates the cache on updates.
+    return joblib.load(path)
+
+
+force_model_training = os.getenv("AML_TRAIN_MODEL", "0") == "1"
+model_bundle = None
+if MODEL_BUNDLE_PATH.exists() and not force_model_training:
+    model_bundle = load_model_bundle(
+        str(MODEL_BUNDLE_PATH),
+        MODEL_BUNDLE_PATH.stat().st_mtime,
+    )
+
+raw_df = model_bundle["sample_data"] if model_bundle else load_data()
 
 
 # =========================
@@ -482,7 +500,12 @@ def preprocess_data(df):
     return model_df, y, report_df, encoders, categorical_cols
 
 
-model_df, y, report_df, encoders, categorical_cols = preprocess_data(raw_df)
+if model_bundle:
+    model_df = y = report_df = None
+    encoders = model_bundle["encoders"]
+    categorical_cols = model_bundle["categorical_cols"]
+else:
+    model_df, y, report_df, encoders, categorical_cols = preprocess_data(raw_df)
 
 @st.cache_resource
 def train_model(model_df, y):
@@ -664,7 +687,39 @@ def train_model(model_df, y):
     return model, scoring_model, X_train, X_test, y_test, metrics
 
 
-model, scoring_model, X_train, X_test, y_test, metrics = train_model(model_df, y)
+if model_bundle:
+    model = model_bundle["model"]
+    scoring_model = model_bundle["scoring_model"]
+    X_train = model_bundle["feature_schema"]
+    X_test = y_test = None
+    metrics = model_bundle["metrics"]
+else:
+    model, scoring_model, X_train, X_test, y_test, metrics = train_model(model_df, y)
+
+    sample_data = pd.concat(
+        [
+            raw_df.head(2_000),
+            raw_df[raw_df["Is_laundering"] == 1].head(200),
+            raw_df[
+                raw_df["Sender_bank_location"] != raw_df["Receiver_bank_location"]
+            ].head(200),
+        ],
+        ignore_index=True,
+    ).drop_duplicates()
+
+    bundle_to_save = {
+        "bundle_version": 1,
+        "model": model,
+        "scoring_model": scoring_model,
+        "encoders": encoders,
+        "categorical_cols": categorical_cols,
+        "feature_schema": X_train.iloc[:0].copy(),
+        "metrics": metrics,
+        "sample_data": sample_data,
+    }
+    temporary_bundle_path = MODEL_BUNDLE_PATH.with_suffix(".joblib.tmp")
+    joblib.dump(bundle_to_save, temporary_bundle_path, compress=3)
+    temporary_bundle_path.replace(MODEL_BUNDLE_PATH)
 
 
 # =========================

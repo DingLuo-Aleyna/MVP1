@@ -32,3 +32,24 @@ and time):
 ```bash
 AML_MAX_ROWS=0 ./run.sh
 ```
+
+## Train once, deploy for inference
+
+Run the full training job locally once:
+
+```bash
+/opt/anaconda3/bin/python train_model.py
+```
+
+This creates `aml_model_bundle.joblib`. After that, `./run.sh` loads the model
+bundle and no longer reads or trains on `SAML-D.csv`. Commit the bundle with the
+application code before deploying:
+
+```bash
+git add aml_model_bundle.joblib train_model.py app1.1.py requirements.txt
+git commit -m "Add pre-trained AML model bundle"
+git push
+```
+
+If the bundle is larger than GitHub's normal file limit, store it with Git LFS
+or in cloud object storage instead of regular Git.
