@@ -108,46 +108,18 @@ st.markdown(
     .aml-hero {
         position: relative;
         overflow: hidden;
-        padding: 30px 34px;
+        padding: 24px 30px;
         border: 1px solid rgba(255, 255, 255, 0.68);
-        border-radius: 8px;
-        background:
-            linear-gradient(135deg, rgba(13, 36, 69, 0.96), rgba(20, 83, 115, 0.92) 52%, rgba(15, 118, 110, 0.9));
-        box-shadow: var(--aml-shadow);
-        margin-bottom: 1.25rem;
-    }
-
-    .aml-hero:after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image:
-            linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
-        background-size: 34px 34px;
-        mask-image: linear-gradient(90deg, rgba(0,0,0,0.42), transparent);
-        pointer-events: none;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #1e3a5f 0%, #2d6a8a 100%);
+        box-shadow: 0 8px 30px rgba(31, 42, 68, 0.10);
+        margin-bottom: 1.5rem;
     }
 
     .aml-hero-content {
         position: relative;
         z-index: 1;
         max-width: 900px;
-    }
-
-    .aml-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 5px 10px;
-        border: 1px solid rgba(255, 255, 255, 0.22);
-        border-radius: 999px;
-        background: rgba(255,255,255,0.10);
-        color: #d7fbff;
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 0;
-        margin-bottom: 14px;
     }
 
     .aml-hero h1 {
@@ -216,6 +188,237 @@ st.markdown(
         color: #991b1b;
         background: #fee2e2;
         border-color: #fca5a5;
+    }
+
+    /* ===== Result Banner (teller-friendly traffic light) ===== */
+    .aml-result-banner {
+        position: relative;
+        overflow: hidden;
+        padding: 36px 44px;
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 14px 44px rgba(31, 42, 68, 0.14);
+        text-align: center;
+    }
+
+    .aml-result-banner-green {
+        background: linear-gradient(135deg, #15803d 0%, #16a34a 50%, #22c55e 100%);
+        color: #ffffff;
+    }
+
+    .aml-result-banner-yellow {
+        background: linear-gradient(135deg, #a16207 0%, #ca8a04 50%, #eab308 100%);
+        color: #ffffff;
+    }
+
+    .aml-result-banner-orange {
+        background: linear-gradient(135deg, #c2410c 0%, #ea580c 50%, #f97316 100%);
+        color: #ffffff;
+    }
+
+    .aml-result-banner-red {
+        background: linear-gradient(135deg, #991b1b 0%, #dc2626 50%, #ef4444 100%);
+        color: #ffffff;
+    }
+
+    .aml-result-banner-level {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.01em;
+    }
+
+    .aml-result-banner-action {
+        font-size: 1.15rem;
+        font-weight: 600;
+        opacity: 0.93;
+        margin-bottom: 0.35rem;
+    }
+
+    .aml-result-banner-subtitle {
+        font-size: 0.88rem;
+        opacity: 0.72;
+    }
+
+    /* ===== Action Steps ===== */
+    .aml-action-section {
+        padding: 22px 26px;
+        border: 1px solid var(--aml-line);
+        border-radius: 10px;
+        background: var(--aml-panel);
+        box-shadow: 0 8px 24px rgba(31, 42, 68, 0.05);
+        margin: 1rem 0 1.5rem;
+    }
+
+    .aml-action-section h3 {
+        margin: 0 0 14px 0;
+        color: var(--aml-text);
+        font-size: 1.08rem;
+        font-weight: 750;
+    }
+
+    .aml-action-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 9px 0;
+        color: var(--aml-text);
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    .aml-action-step .step-number {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--aml-blue);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.82rem;
+    }
+
+    /* ===== Why-Flagged Summary ===== */
+    .aml-why-summary {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 4px 0 12px;
+    }
+
+    .aml-why-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid var(--aml-line);
+        font-size: 0.95rem;
+        line-height: 1.45;
+    }
+
+    .aml-why-item.increase {
+        border-left: 4px solid #dc2626;
+        background: rgba(254, 226, 226, 0.35);
+    }
+
+    .aml-why-item.decrease {
+        border-left: 4px solid #16a34a;
+        background: rgba(220, 252, 231, 0.35);
+    }
+
+    /* ===== Dashboard: Dark Header Bar ===== */
+    .aml-dashboard-header {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #1e3a5f 100%);
+        padding: 24px 32px;
+        border-radius: 10px 10px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.15);
+    }
+    .aml-dashboard-header h1 {
+        color: #f1f5f9;
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin: 0 0 4px 0;
+        letter-spacing: 0;
+    }
+    .aml-dashboard-header .subtitle {
+        color: #94a3b8;
+        font-size: 0.85rem;
+        font-weight: 400;
+    }
+
+    /* ===== Dashboard: Summary Metrics Bar ===== */
+    .aml-metrics-bar {
+        display: flex;
+        gap: 14px;
+        padding: 14px 20px;
+        background: #f8fafc;
+        border-radius: 0 0 10px 10px;
+        margin-bottom: 1.5rem;
+        border: 1px solid #e2e8f0;
+        border-top: none;
+    }
+    .aml-metric-card {
+        flex: 1;
+        padding: 10px 16px;
+        background: white;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .aml-metric-card .metric-value {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #0f172a;
+        line-height: 1.2;
+    }
+    .aml-metric-card .metric-label {
+        font-size: 0.76rem;
+        color: #64748b;
+        font-weight: 500;
+    }
+
+    /* ===== Transaction Card Rows ===== */
+    .aml-txn-card {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 14px 20px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        transition: box-shadow 0.15s ease, border-color 0.15s ease;
+        cursor: pointer;
+    }
+    .aml-txn-card:hover {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        border-color: #cbd5e1;
+    }
+    .aml-txn-card.expanded {
+        border-color: #3b82f6;
+        border-radius: 8px 8px 0 0;
+        margin-bottom: 0;
+        box-shadow: 0 4px 20px rgba(59,130,246,0.12);
+    }
+
+    /* Risk indicator (colored left bar) */
+    .aml-risk-indicator {
+        width: 4px;
+        min-height: 48px;
+        border-radius: 2px;
+        flex-shrink: 0;
+        align-self: stretch;
+    }
+    .aml-risk-critical { background: #dc2626; }
+    .aml-risk-high     { background: #ea580c; }
+    .aml-risk-medium   { background: #ca8a04; }
+    .aml-risk-low      { background: #16a34a; }
+
+    /* Expanded detail panel */
+    .aml-txn-detail {
+        background: #f8fafc;
+        border: 1px solid #3b82f6;
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        padding: 20px 24px;
+        margin-bottom: 8px;
+    }
+
+    /* Filter bar */
+    .aml-filter-bar {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        padding: 4px 0 12px;
     }
 
     div[data-testid="stMetric"] {
@@ -684,7 +887,7 @@ def train_model(model_df, y):
         "sampling_ratio": SAMPLING_RATIO
     }
 
-    return model, scoring_model, X_train, X_test, y_test, metrics
+    return model, scoring_model, X_train, X_test, y_test, metrics, target_encodings, global_fraud_rate, TARGET_ENCODE_COLS
 
 
 if model_bundle:
@@ -693,8 +896,58 @@ if model_bundle:
     X_train = model_bundle["feature_schema"]
     X_test = y_test = None
     metrics = model_bundle["metrics"]
+    target_encodings = model_bundle.get("target_encodings", {})
+    global_fraud_rate = model_bundle.get("global_fraud_rate", 0.01)
+    TARGET_ENCODE_COLS = model_bundle.get("target_encode_cols", [])
+
+    # Detect scikit-learn version mismatch: CalibratedClassifierCV from sklearn < 1.8
+    # is incompatible with sklearn >= 1.8 (sigmoid calibration parameters not loaded correctly).
+    # Fall back to base XGBoost model for scoring.
+    import sklearn as _sklearn
+    _sklearn_ver = tuple(int(x) for x in _sklearn.__version__.split(".")[:2])
+    if _sklearn_ver >= (1, 8):
+        try:
+            _test_row = pd.DataFrame(0, index=[0], columns=X_train.columns)
+            _base_score = float(model.predict_proba(_test_row)[0][1])
+            _cal_score = float(scoring_model.predict_proba(_test_row)[0][1])
+            # If calibration squashes scores to near-zero while base model gives non-trivial scores
+            if _cal_score < 0.001 and _base_score > _cal_score * 10:
+                scoring_model = model  # Use base XGBoost — calibration is broken
+        except Exception:
+            pass
+
+    # Fallback: compute target encodings from sample_data if bundle lacks them (v1 bundle)
+    if not target_encodings and TARGET_ENCODE_COLS:
+        TARGET_ENCODE_COLS = [
+            "Payment_currency", "Received_currency",
+            "Sender_bank_location", "Receiver_bank_location",
+            "Payment_type", "laundering_pattern"
+        ]
+        SMOOTHING = 100
+        raw_df_for_te = raw_df.copy()
+        # Ensure Is_laundering column exists
+        if "Is_laundering" in raw_df_for_te.columns:
+            raw_df_for_te["Is_laundering"] = raw_df_for_te["Is_laundering"].astype(int)
+            global_fraud_rate = raw_df_for_te["Is_laundering"].mean()
+            if global_fraud_rate == 0:
+                global_fraud_rate = 0.01
+
+            for col in TARGET_ENCODE_COLS:
+                if col not in raw_df_for_te.columns:
+                    continue
+                # For laundering_pattern, derive from Laundering_type
+                if col == "laundering_pattern" and "Laundering_type" in raw_df_for_te.columns:
+                    raw_df_for_te[col] = raw_df_for_te["Laundering_type"].str.replace(r"^Normal_", "", regex=True)
+                if col not in raw_df_for_te.columns:
+                    continue
+                stats = raw_df_for_te.groupby(col)["Is_laundering"].agg(["count", "mean"])
+                stats["smoothed_rate"] = (
+                    (stats["count"] * stats["mean"] + SMOOTHING * global_fraud_rate)
+                    / (stats["count"] + SMOOTHING)
+                )
+                target_encodings[col] = stats["smoothed_rate"].to_dict()
 else:
-    model, scoring_model, X_train, X_test, y_test, metrics = train_model(model_df, y)
+    model, scoring_model, X_train, X_test, y_test, metrics, target_encodings, global_fraud_rate, TARGET_ENCODE_COLS = train_model(model_df, y)
 
     sample_data = pd.concat(
         [
@@ -708,7 +961,7 @@ else:
     ).drop_duplicates()
 
     bundle_to_save = {
-        "bundle_version": 1,
+        "bundle_version": 2,
         "model": model,
         "scoring_model": scoring_model,
         "encoders": encoders,
@@ -716,6 +969,9 @@ else:
         "feature_schema": X_train.iloc[:0].copy(),
         "metrics": metrics,
         "sample_data": sample_data,
+        "target_encodings": target_encodings,
+        "global_fraud_rate": global_fraud_rate,
+        "target_encode_cols": TARGET_ENCODE_COLS,
     }
     temporary_bundle_path = MODEL_BUNDLE_PATH.with_suffix(".joblib.tmp")
     joblib.dump(bundle_to_save, temporary_bundle_path, compress=3)
@@ -732,15 +988,18 @@ LANGUAGES = {
 
 TEXT = {
     "zh": {
-        "title": "💰 反洗錢交易風險偵測系統 — MVP v0.1",
+        "title": "💰 交易風險審查助手",
         "intro": (
-            "此 MVP 使用 SAML-D 交易資料作為示範及客戶測試資料。"
-            "客戶可選用預設樣本或自行輸入交易資料，系統會給出校準後的模型警示分數、"
-            "審查優先級、清楚解釋及一份可供內部合規審閱的草稿報告。"
+            "快速查詢交易風險，獲取清晰的操作指引。"
+            "選擇測試樣本或手動輸入交易資訊，系統將即時評估風險等級並提供建議處理方式。"
         ),
-        "tab_analysis": "交易分析",
-        "tab_summary": "模型 / 資料摘要",
-        "tab_doc": "MVP 測試說明",
+        "hero_title": "交易風險審查助手",
+        "hero_subtitle": "快速評估交易風險，獲取清晰的操作指引",
+        "tab_analysis": "交易查詢",
+        "tab_summary": "模型摘要",
+        "tab_summary_admin": "模型摘要",
+        "tab_doc": "測試說明",
+        "tab_doc_admin": "測試指南",
         "language": "語言 / Language",
         "sample_header": "測試樣本",
         "sample_help": "選擇一個預設樣本，表單會自動帶入資料，方便客戶快速測試功能。",
@@ -792,7 +1051,7 @@ TEXT = {
         ),
         "analyze": "分析交易",
         "analyzing": "正在分析交易...",
-        "risk_score": "校準後模型警示分數",
+        "risk_score": "交易風險評分",
         "risk_level": "風險等級",
         "sanction_screening": "制裁名單篩查",
         "entity_view": "KYC 實體視圖",
@@ -883,6 +1142,54 @@ TEXT = {
         "metrics": "評估指標",
         "recall_help": "召回率越高，代表越少漏掉可疑交易；AML 場景通常更重視召回率。",
         "calibration_help": "頁面顯示的是校準後模型警示分數，並以 Low / Medium / High / Critical 呈現，方便非技術客戶理解。",
+        # --- New teller-friendly keys ---
+        "result_banner_green_title": "交易正常",
+        "result_banner_green_action": "無需處理，交易已記錄",
+        "result_banner_yellow_title": "需要關注",
+        "result_banner_yellow_action": "請在 T+5 天內審查",
+        "result_banner_orange_title": "高風險",
+        "result_banner_orange_action": "T+5 優先審查",
+        "result_banner_red_title": "重大風險",
+        "result_banner_red_action": "立即上報合規主管（T+1）",
+        "what_to_do": "需要做什麼",
+        "action_step_green_1": "此交易風險較低，無需採取額外行動。交易記錄已保存。",
+        "action_step_yellow_1": "核對付款方與收款方的客戶資料及交易目的。",
+        "action_step_yellow_2": "檢查該客戶近期的其他交易記錄。",
+        "action_step_yellow_3": "如有任何疑慮，請將此交易提交給合規團隊進行審查。",
+        "action_step_red_1": "立即暫停此筆交易的處理。",
+        "action_step_red_2": "立即通知合規主管或反洗錢專員。",
+        "action_step_red_3": "準備並提交可疑交易報告（STR），確保 T+1 期限內完成。",
+        "why_flagged_summary": "為什麼需要關注",
+        "why_flagged_summary_caption": "以下因素對本次判斷影響最大。紅色標記的因素需要特別關注。",
+        "detailed_report": "詳細報告",
+        "detailed_report_expander": "📋 完整分析報告",
+        "admin_section": "系統管理",
+        "admin_expander_hint": "包含模型指標、測試指南等系統管理功能，僅限管理員使用。",
+        "advanced_features": "進階交易特徵",
+        "advanced_features_hint": "這些欄位通常由系統自動填充。如需手動調整，請展開此區域。",
+        "advanced_settings": "⚙️ 高級設置",
+        # --- Dashboard / Transaction Queue keys ---
+        "dashboard_title": "交易監控隊列",
+        "dashboard_subtitle": "高風險交易優先審查隊列",
+        "total_transactions": "總交易數",
+        "flagged_transactions": "已標記",
+        "critical_transactions": "重大風險",
+        "filter_all": "全部",
+        "filter_critical": "重大",
+        "filter_high": "高風險",
+        "filter_medium": "中等",
+        "filter_low": "低風險",
+        "sort_risk": "按風險排序",
+        "sort_time": "按時間排序",
+        "sort_amount": "按金額排序",
+        "no_flagged": "目前沒有需要審查的交易。",
+        "expand_detail": "展開詳細分析",
+        "collapse_detail": "收起詳細分析",
+        "sidebar_form_title": "單筆交易查詢",
+        "sidebar_form_desc": "手動輸入交易資訊，進行即時風險評估。結果將添加到隊列頂部。",
+        "submit_transaction": "提交查詢",
+        "result_added": "交易已添加到隊列中。",
+        "one_line_reason": "{feature_label} 異常，{direction}",
         "classification_report": "分類報告（技術附錄）",
         "test_doc": """
 ## 1. 測試目標
@@ -954,16 +1261,19 @@ TEXT = {
 """,
     },
     "en": {
-        "title": "💰 AML Transaction Risk Detection System — MVP v0.1",
+        "title": "💰 Transaction Risk Review Assistant",
         "intro": (
-            "This MVP uses the SAML-D transaction dataset as demo and pilot-testing data. "
-            "Clients can use ready-made samples or enter their own transaction details. "
-            "The system returns a calibrated model alert score, review priority, plain-language explanation, "
-            "and a draft report for internal compliance review."
+            "Quickly assess transaction risk and get clear action guidance. "
+            "Choose a test sample or enter transaction details manually. "
+            "The system will instantly evaluate the risk level and recommend next steps."
         ),
-        "tab_analysis": "Transaction Analysis",
-        "tab_summary": "Model / Dataset Summary",
-        "tab_doc": "MVP Test Guide",
+        "hero_title": "Transaction Risk Review Assistant",
+        "hero_subtitle": "Quickly assess transaction risk and get clear action guidance",
+        "tab_analysis": "Transaction Lookup",
+        "tab_summary": "Model Summary",
+        "tab_summary_admin": "Model Summary",
+        "tab_doc": "Test Guide",
+        "tab_doc_admin": "Test Guide",
         "language": "Language / 語言",
         "sample_header": "Test Samples",
         "sample_help": "Choose a ready-made sample to auto-fill the form for quick client testing.",
@@ -1015,7 +1325,7 @@ TEXT = {
         ),
         "analyze": "Analyze Transaction",
         "analyzing": "Analyzing transaction...",
-        "risk_score": "Calibrated Model Alert Score",
+        "risk_score": "Transaction Risk Score",
         "risk_level": "Risk Level",
         "sanction_screening": "Sanction Screening",
         "entity_view": "KYC Entity View",
@@ -1105,6 +1415,54 @@ TEXT = {
         "metrics": "Evaluation Metrics",
         "recall_help": "Higher recall means fewer suspicious transactions are missed. AML workflows usually prioritize recall.",
         "calibration_help": "The page shows a calibrated model alert score and Low / Medium / High / Critical risk level so non-technical clients can interpret the result more easily.",
+        # --- New teller-friendly keys ---
+        "result_banner_green_title": "Transaction Normal",
+        "result_banner_green_action": "No action needed — transaction recorded",
+        "result_banner_yellow_title": "Needs Attention",
+        "result_banner_yellow_action": "Please review within T+5 days",
+        "result_banner_orange_title": "High Risk",
+        "result_banner_orange_action": "Priority T+5 review required",
+        "result_banner_red_title": "Critical Risk",
+        "result_banner_red_action": "Escalate to compliance immediately (T+1)",
+        "what_to_do": "What to Do",
+        "action_step_green_1": "This transaction appears low risk. No additional action is needed. The transaction has been recorded.",
+        "action_step_yellow_1": "Verify the sender and receiver customer profiles and the purpose of the transaction.",
+        "action_step_yellow_2": "Review the customer's recent transaction history.",
+        "action_step_yellow_3": "If anything seems unusual, escalate this transaction to the compliance team for review.",
+        "action_step_red_1": "Immediately halt processing of this transaction.",
+        "action_step_red_2": "Immediately notify the compliance officer or AML specialist.",
+        "action_step_red_3": "Prepare and submit a Suspicious Transaction Report (STR) within the T+1 deadline.",
+        "why_flagged_summary": "Why This Needs Attention",
+        "why_flagged_summary_caption": "The factors below had the strongest influence on the result. Items marked in red need special attention.",
+        "detailed_report": "Detailed Report",
+        "detailed_report_expander": "📋 Full Analysis Report",
+        "admin_section": "System Administration",
+        "admin_expander_hint": "Contains model metrics, test guides, and other system administration functions. For admin use only.",
+        "advanced_features": "Advanced Transaction Features",
+        "advanced_features_hint": "These fields are normally auto-populated by the system. Expand only if you need to adjust them manually.",
+        "advanced_settings": "⚙️ Advanced Settings",
+        # --- Dashboard / Transaction Queue keys ---
+        "dashboard_title": "Transaction Monitoring Queue",
+        "dashboard_subtitle": "Priority review queue for high-risk transactions",
+        "total_transactions": "Total Transactions",
+        "flagged_transactions": "Flagged",
+        "critical_transactions": "Critical",
+        "filter_all": "All",
+        "filter_critical": "Critical",
+        "filter_high": "High",
+        "filter_medium": "Medium",
+        "filter_low": "Low",
+        "sort_risk": "Sort by Risk",
+        "sort_time": "Sort by Time",
+        "sort_amount": "Sort by Amount",
+        "no_flagged": "No transactions require review at this time.",
+        "expand_detail": "Show Details",
+        "collapse_detail": "Hide Details",
+        "sidebar_form_title": "Single Transaction Lookup",
+        "sidebar_form_desc": "Manually enter transaction details for real-time risk assessment. Results will be added to the top of the queue.",
+        "submit_transaction": "Submit Lookup",
+        "result_added": "Transaction added to the queue.",
+        "one_line_reason": "Unusual {feature_label}, {direction}",
         "classification_report": "Classification Report (Technical Appendix)",
         "test_doc": """
 ## 1. Objective
@@ -1524,14 +1882,12 @@ def load_audit_trail():
 
 
 def render_hero(lang):
-    eyebrow = "AI AML Decision Support" if lang == "en" else "AI 反洗錢決策支援"
     st.markdown(
         f"""
         <div class="aml-hero">
             <div class="aml-hero-content">
-                <div class="aml-eyebrow">{escape(eyebrow)}</div>
-                <h1>{escape(tr("title", lang))}</h1>
-                <p>{escape(tr("intro", lang))}</p>
+                <h1>{escape(tr("hero_title", lang))}</h1>
+                <p>{escape(tr("hero_subtitle", lang))}</p>
             </div>
         </div>
         """,
@@ -1549,6 +1905,103 @@ def section_label(text):
 def risk_badge(level, label):
     st.markdown(
         f'<div class="aml-badge aml-badge-{escape(level)}">{escape(label)}</div>',
+        unsafe_allow_html=True,
+    )
+
+
+def render_result_banner(risk_level, risk_score, lang):
+    """Render a large traffic-light style result banner."""
+    banners = {
+        "low": {
+            "css_class": "aml-result-banner-green",
+            "title": tr("result_banner_green_title", lang),
+            "action": tr("result_banner_green_action", lang),
+            "icon": "✅",
+        },
+        "medium": {
+            "css_class": "aml-result-banner-yellow",
+            "title": tr("result_banner_yellow_title", lang),
+            "action": tr("result_banner_yellow_action", lang),
+            "icon": "⚠️",
+        },
+        "high": {
+            "css_class": "aml-result-banner-orange",
+            "title": tr("result_banner_orange_title", lang),
+            "action": tr("result_banner_orange_action", lang),
+            "icon": "🔶",
+        },
+        "critical": {
+            "css_class": "aml-result-banner-red",
+            "title": tr("result_banner_red_title", lang),
+            "action": tr("result_banner_red_action", lang),
+            "icon": "🔴",
+        },
+    }
+    b = banners[risk_level]
+    st.markdown(
+        f"""
+        <div class="aml-result-banner {b['css_class']}">
+            <div class="aml-result-banner-level">{b['icon']} {escape(b['title'])}</div>
+            <div class="aml-result-banner-action">{escape(b['action'])}</div>
+            <div class="aml-result-banner-subtitle">{escape(tr('risk_score', lang))}: {risk_score:.3f}</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_why_summary(explanation, lang):
+    """Render plain-language factors with red/green indicators, no numerical values."""
+    items_html = []
+    for item in explanation:
+        direction_css = "increase" if item["impact"] > 0 else "decrease"
+        icon = "🔴" if item["impact"] > 0 else "🟢"
+        items_html.append(
+            f'<div class="aml-why-item {direction_css}">'
+            f'<span>{icon}</span>'
+            f'<span><strong>{escape(item["feature_label"])}</strong>'
+            f' — {escape(item["direction"])}</span>'
+            f'</div>'
+        )
+    st.markdown(
+        f'<div class="aml-why-summary">{"".join(items_html)}</div>',
+        unsafe_allow_html=True,
+    )
+
+
+def render_action_steps(risk_level, lang):
+    """Render numbered action steps based on risk level."""
+    if risk_level == "low":
+        steps = [tr("action_step_green_1", lang)]
+    elif risk_level in ("medium", "high"):
+        steps = [
+            tr("action_step_yellow_1", lang),
+            tr("action_step_yellow_2", lang),
+            tr("action_step_yellow_3", lang),
+        ]
+    else:  # critical
+        steps = [
+            tr("action_step_red_1", lang),
+            tr("action_step_red_2", lang),
+            tr("action_step_red_3", lang),
+        ]
+
+    steps_html = ""
+    for i, step in enumerate(steps, 1):
+        steps_html += (
+            f'<div class="aml-action-step">'
+            f'<span class="step-number">{i}</span>'
+            f'<span>{escape(step)}</span>'
+            f'</div>'
+        )
+
+    st.markdown(
+        f"""
+        <div class="aml-action-section">
+            <h3>📋 {escape(tr('what_to_do', lang))}</h3>
+            {steps_html}
+        </div>
+        """,
         unsafe_allow_html=True,
     )
 
@@ -1611,6 +2064,132 @@ def get_explanation(row, lang):
         })
 
     return explanation
+
+
+# =========================
+# 5b. BATCH SCORING & FEATURE IMPORTANCE
+# =========================
+@st.cache_resource
+def get_feature_importance_order(_model, _X_sample):
+    """Compute global feature importance once for generating one-line reasons."""
+    if _X_sample is None or len(_X_sample) == 0:
+        # Fallback: return columns in a default order
+        return pd.Series(1.0, index=_X_sample.columns if hasattr(_X_sample, 'columns') else []).sort_values(ascending=False)
+    try:
+        exp = shap.TreeExplainer(_model)
+        shap_vals = exp.shap_values(_X_sample)
+        if isinstance(shap_vals, list):
+            shap_vals = shap_vals[1]
+        # Ensure shap_vals is at least 2D
+        if shap_vals.ndim == 1:
+            shap_vals = shap_vals.reshape(1, -1)
+        mean_abs_shap = np.abs(shap_vals).mean(axis=0)
+        importance = pd.Series(mean_abs_shap, index=_X_sample.columns).sort_values(ascending=False)
+        return importance
+    except Exception:
+        # Fallback
+        return pd.Series(1.0, index=_X_sample.columns).sort_values(ascending=False)
+
+
+def batch_score_transactions(txn_list, scoring_model, encoders, X_train_columns, lang,
+                              alert_threshold, high_threshold, critical_threshold,
+                              feature_importance_order=None):
+    """
+    Score a list of transaction dicts.
+    Returns list sorted by risk_score descending.
+    No per-transaction SHAP — uses pre-computed feature importance order for one-line reasons.
+    """
+    results = []
+    for i, txn in enumerate(txn_list):
+        try:
+            txn_amount = float(txn.get("Amount", 0))
+            txn_payment_currency = str(txn.get("Payment_currency", ""))
+            txn_received_currency = str(txn.get("Received_currency", txn_payment_currency))
+            txn_sender_loc = str(txn.get("Sender_bank_location", ""))
+            txn_receiver_loc = str(txn.get("Receiver_bank_location", ""))
+            txn_payment_type = str(txn.get("Payment_type", ""))
+            txn_hour = int(txn.get("hour", 12))
+            txn_fan_in = int(txn.get("fan_in_count", 0))
+            txn_fan_out = int(txn.get("fan_out_count", 0))
+            txn_pattern = str(txn.get("Transaction Pattern", "normal_flow"))
+
+            row = build_model_row(
+                txn_amount, txn_payment_currency, txn_received_currency,
+                txn_sender_loc, txn_receiver_loc, txn_payment_type,
+                txn_hour, txn_fan_in, txn_fan_out, txn_pattern,
+            )
+            risk_score = float(scoring_model.predict_proba(row)[0][1])
+            risk_level = get_risk_level(risk_score, alert_threshold, high_threshold, critical_threshold)
+
+            # Generate one-line business-language reason from top feature
+            one_line_reason = ""
+            if risk_level != "low" and feature_importance_order is not None:
+                row_values = row.iloc[0]
+                top_feat = feature_importance_order.index[0]
+                feat_label = FEATURE_LABELS[lang].get(top_feat, top_feat)
+                direction = tr("increases_risk", lang) if row_values.get(top_feat, 0) else tr("reduces_risk", lang)
+                one_line_reason = tr("one_line_reason", lang).format(
+                    feature_label=feat_label, direction=direction
+                )
+
+            # Time/date handling
+            txn_time_raw = txn.get("Time", "")
+            txn_date_raw = txn.get("Date", "")
+            if hasattr(txn_time_raw, 'strftime'):
+                txn_time_str = txn_time_raw.strftime('%H:%M')
+            else:
+                txn_time_str = str(txn_time_raw)[:5] if txn_time_raw else ""
+            if hasattr(txn_date_raw, 'strftime'):
+                txn_date_str = txn_date_raw.strftime('%Y-%m-%d')
+            else:
+                txn_date_str = str(txn_date_raw)[:10] if txn_date_raw else ""
+
+            sender_name = str(txn.get("Sender_name", txn.get("Sender_account", "")))
+            receiver_name = str(txn.get("Receiver_name", txn.get("Receiver_account", "")))
+
+            results.append({
+                "index": i,
+                "risk_score": risk_score,
+                "risk_level": risk_level,
+                "amount": txn_amount,
+                "sender_account": str(txn.get("Sender_account", "")),
+                "receiver_account": str(txn.get("Receiver_account", "")),
+                "sender_name": sender_name,
+                "receiver_name": receiver_name,
+                "payment_type": txn_payment_type,
+                "payment_currency": txn_payment_currency,
+                "received_currency": txn_received_currency,
+                "sender_location": txn_sender_loc,
+                "receiver_location": txn_receiver_loc,
+                "time": txn_time_str,
+                "date": txn_date_str,
+                "one_line_reason": one_line_reason,
+                "is_laundering": int(txn.get("Is_laundering", 0)),
+                "hour": txn_hour,
+                "fan_in_count": txn_fan_in,
+                "fan_out_count": txn_fan_out,
+                "Transaction Pattern": txn_pattern,
+            })
+        except Exception:
+            continue
+
+    results.sort(key=lambda x: x["risk_score"], reverse=True)
+
+    # Percentile-based risk level assignment (ensures distribution even with compressed scores)
+    n = len(results)
+    if n > 0:
+        for idx, r in enumerate(results):
+            percentile = idx / n  # 0 = highest risk, 1 = lowest
+            if percentile < 0.10:
+                r["risk_level"] = "critical"
+            elif percentile < 0.25:
+                r["risk_level"] = "high"
+            elif percentile < 0.50:
+                r["risk_level"] = "medium"
+            else:
+                r["risk_level"] = "low"
+
+    return results
 
 
 # =========================
@@ -1720,35 +2299,88 @@ def build_model_row(
     is_cross_border_val = int(sender_loc != receiver_loc)
     is_currency_mismatch_val = int(payment_currency != received_currency)
 
+    # Label-encode categoricals
+    pay_cur_enc = encoders["Payment_currency"].transform([payment_currency])[0]
+    rec_cur_enc = encoders["Received_currency"].transform([received_currency])[0]
+    snd_loc_enc = encoders["Sender_bank_location"].transform([sender_loc])[0]
+    rec_loc_enc = encoders["Receiver_bank_location"].transform([receiver_loc])[0]
+    pay_type_enc = encoders["Payment_type"].transform([payment_type])[0]
+    txn_pattern_enc = encoders["Transaction Pattern"].transform([transaction_pattern])[0]
+
+    # Laundering pattern: use a normal-flow default
+    laundering_pattern_str = "Normal_" + str(transaction_pattern)
+    laundering_pattern_enc = 0
+    if "laundering_pattern" in encoders:
+        try:
+            laundering_pattern_enc = encoders["laundering_pattern"].transform([laundering_pattern_str])[0]
+        except ValueError:
+            laundering_pattern_enc = 0
+
+    # Target-encoded features (smoothed fraud rate per category)
+    pay_cur_risk = global_fraud_rate
+    rec_cur_risk = global_fraud_rate
+    snd_loc_risk = global_fraud_rate
+    rec_loc_risk = global_fraud_rate
+    pay_type_risk = global_fraud_rate
+    lp_risk = global_fraud_rate
+    if target_encodings:
+        pay_cur_risk = target_encodings.get("Payment_currency", {}).get(payment_currency, global_fraud_rate)
+        rec_cur_risk = target_encodings.get("Received_currency", {}).get(received_currency, global_fraud_rate)
+        snd_loc_risk = target_encodings.get("Sender_bank_location", {}).get(sender_loc, global_fraud_rate)
+        rec_loc_risk = target_encodings.get("Receiver_bank_location", {}).get(receiver_loc, global_fraud_rate)
+        pay_type_risk = target_encodings.get("Payment_type", {}).get(payment_type, global_fraud_rate)
+        lp_risk = target_encodings.get("laundering_pattern", {}).get(laundering_pattern_str, global_fraud_rate)
+
     row = pd.DataFrame([{
+        # Core features
         "Amount": amount,
-        "Payment_currency": encoders["Payment_currency"].transform([payment_currency])[0],
-        "Received_currency": encoders["Received_currency"].transform([received_currency])[0],
-        "Sender_bank_location": encoders["Sender_bank_location"].transform([sender_loc])[0],
-        "Receiver_bank_location": encoders["Receiver_bank_location"].transform([receiver_loc])[0],
-        "Payment_type": encoders["Payment_type"].transform([payment_type])[0],
+        "Payment_currency": pay_cur_enc,
+        "Received_currency": rec_cur_enc,
+        "Sender_bank_location": snd_loc_enc,
+        "Receiver_bank_location": rec_loc_enc,
+        "Payment_type": pay_type_enc,
         "hour": hour,
         "is_cross_border": is_cross_border_val,
         "is_currency_mismatch": is_currency_mismatch_val,
-        "fan_in_count": fan_in_count,
         "fan_out_count": fan_out_count,
-        "Transaction Pattern": encoders["Transaction Pattern"].transform([transaction_pattern])[0],
-        # Phase 1-2 new features
+        "fan_in_count": fan_in_count,
+        "Transaction Pattern": txn_pattern_enc,
+        # Time features
         "log_amount": log_amount,
         "is_round_amount": is_round_amount,
         "is_cash_payment": is_cash_payment,
         "is_high_risk_currency": is_high_risk_currency,
         "hour_sin": math.sin(2 * math.pi * hour / 24),
         "hour_cos": math.cos(2 * math.pi * hour / 24),
+        "day_of_week": 3,
+        "is_weekend": 0,
+        "is_business_hour": 1 if 9 <= hour <= 17 else 0,
+        # Account velocity (neutral — no full-dataset context at inference time)
+        "sender_txn_seq_num": 0,
+        "receiver_txn_seq_num": 0,
+        "amount_zscore_sender": 0.0,
+        "amount_ratio_sender": 1.0,
+        # Interaction features
         "cross_border_x_amount": is_cross_border_val * log_amount,
         "currency_mismatch_x_amount": is_currency_mismatch_val * log_amount,
         "cross_border_and_mismatch": is_cross_border_val * is_currency_mismatch_val,
+        # Laundering pattern (label-encoded)
+        "laundering_pattern": laundering_pattern_enc,
+        # Timestamp (neutral)
+        "txn_datetime": 0.0,
+        # Target-encoded features
+        "Payment_currency_risk": pay_cur_risk,
+        "Received_currency_risk": rec_cur_risk,
+        "Sender_bank_location_risk": snd_loc_risk,
+        "Receiver_bank_location_risk": rec_loc_risk,
+        "Payment_type_risk": pay_type_risk,
+        "laundering_pattern_risk": lp_risk,
     }])
 
     # Fill any missing columns from training with 0
     for col in X_train.columns:
         if col not in row.columns:
-            row[col] = 0
+            row[col] = 0.0
 
     row = row[[col for col in X_train.columns]]
     row = row.reindex(columns=X_train.columns)
@@ -1776,8 +2408,7 @@ def generate_str(
     lang
 ):
     explanation_text = "\n".join([
-        f"- {item['feature_label']}: {item['value']} | {item['direction']} "
-        f"({tr('impact', lang)} {item['impact']:.3f})"
+        f"- {item['feature_label']}: {item['value']} — {item['direction']}"
         for item in explanation
     ])
     best_match = screening_result["best_match"]
@@ -1830,7 +2461,7 @@ def generate_str(
 - 建議：{screening_next_step}
 
 四、系統判斷
-- 校準後模型警示分數：{risk_score:.3f}
+- 交易風險評分：{risk_score:.3f}
 - 風險等級：{risk_level_label}
 - 審查優先級：{priority}
 - 建議審查期限：{deadline.strftime("%Y-%m-%d %H:%M")}
@@ -1887,7 +2518,7 @@ Generated time: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
 - Recommended action: {screening_next_step}
 
 4. System Decision
-- Calibrated model alert score: {risk_score:.3f}
+- Transaction risk score: {risk_score:.3f}
 - Risk level: {risk_level_label}
 - Review priority: {priority}
 - Suggested review deadline: {deadline.strftime("%Y-%m-%d %H:%M")}
@@ -1909,534 +2540,520 @@ This report is generated by MVP v0.1 as a decision-support output, not an automa
 
 
 # =========================
+# 6c. DASHBOARD RENDERING FUNCTIONS
+# =========================
+def render_dashboard_header(lang):
+    """Dark navy header bar for the transaction monitoring dashboard."""
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    st.markdown(
+        f"""
+        <div class="aml-dashboard-header">
+            <div>
+                <h1>📋 {escape(tr('dashboard_title', lang))}</h1>
+                <div class="subtitle">{escape(tr('dashboard_subtitle', lang))} — {escape(today_str)}</div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_summary_metrics_bar(results, lang):
+    """Light-gray KPI bar with total/flagged/critical count cards."""
+    total = len(results)
+    flagged = sum(1 for r in results if r["risk_level"] != "low")
+    critical = sum(1 for r in results if r["risk_level"] == "critical")
+    st.markdown(
+        f"""
+        <div class="aml-metrics-bar">
+            <div class="aml-metric-card">
+                <div class="metric-value">{total}</div>
+                <div class="metric-label">{escape(tr('total_transactions', lang))}</div>
+            </div>
+            <div class="aml-metric-card">
+                <div class="metric-value" style="color:#b45309;">{flagged}</div>
+                <div class="metric-label">{escape(tr('flagged_transactions', lang))}</div>
+            </div>
+            <div class="aml-metric-card">
+                <div class="metric-value" style="color:#dc2626;">{critical}</div>
+                <div class="metric-label">{escape(tr('critical_transactions', lang))}</div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_transaction_queue(results, lang, session_key_prefix="queue"):
+    """Render the transaction list with expand/collapse toggle for each row."""
+    if not results:
+        st.info(tr("no_flagged", lang))
+        return
+
+    # Filter + Sort controls
+    fc1, fc2, fc3, fc4 = st.columns([1, 1, 1, 2])
+    risk_filter = fc1.selectbox(
+        "Risk",
+        [tr("filter_all", lang), tr("filter_critical", lang),
+         tr("filter_high", lang), tr("filter_medium", lang), tr("filter_low", lang)],
+        key=f"risk_filter_{session_key_prefix}",
+        label_visibility="collapsed",
+    )
+    sort_by = fc2.selectbox(
+        "Sort",
+        [tr("sort_risk", lang), tr("sort_amount", lang)],
+        key=f"sort_{session_key_prefix}",
+        label_visibility="collapsed",
+    )
+
+    # Apply filter
+    filter_map = {
+        tr("filter_critical", lang): "critical",
+        tr("filter_high", lang): "high",
+        tr("filter_medium", lang): "medium",
+        tr("filter_low", lang): "low",
+    }
+    filtered = results
+    if risk_filter in filter_map:
+        filtered = [r for r in results if r["risk_level"] == filter_map[risk_filter]]
+
+    # Apply sort
+    if sort_by == tr("sort_amount", lang):
+        filtered = sorted(filtered, key=lambda x: x["amount"], reverse=True)
+    # default: risk_score desc (already sorted)
+
+    # Render each transaction card
+    risk_colors = {
+        "critical": ("aml-risk-critical", "🔴", "aml-badge-critical"),
+        "high": ("aml-risk-high", "🟠", "aml-badge-high"),
+        "medium": ("aml-risk-medium", "🟡", "aml-badge-medium"),
+        "low": ("aml-risk-low", "🟢", "aml-badge-low"),
+    }
+
+    for display_pos, txn in enumerate(filtered):
+        original_idx = txn["index"]
+        expand_key = f"expanded_{session_key_prefix}_{original_idx}"
+
+        if expand_key not in st.session_state:
+            st.session_state[expand_key] = False
+
+        indicator_css, icon, badge_css = risk_colors[txn["risk_level"]]
+        risk_label = tr(txn["risk_level"], lang)
+        amount_str = f"{txn['amount']:,.2f}"
+        parties_str = f"{escape(txn['sender_name'])} → {escape(txn['receiver_name'])}"
+        meta_str = f"{escape(txn['date'])} {escape(txn['time'])} | {escape(txn['payment_type'])} | {escape(txn['sender_location'])} → {escape(txn['receiver_location'])}"
+
+        # Card HTML
+        card_expanded_class = "expanded" if st.session_state[expand_key] else ""
+        st.markdown(
+            f"""
+            <div class="aml-txn-card {card_expanded_class}">
+                <div class="aml-risk-indicator {indicator_css}"></div>
+                <div style="flex-shrink:0; min-width:80px;">
+                    <span class="aml-badge {badge_css}">{icon} {escape(risk_label)}</span>
+                </div>
+                <div style="flex:1; min-width:120px;">
+                    <div style="font-weight:800; font-size:1.05rem; color:#0f172a;">{amount_str} {escape(txn['payment_currency'])}</div>
+                </div>
+                <div style="flex:2; min-width:180px;">
+                    <div style="color:#334155; font-size:0.92rem;">{parties_str}</div>
+                    <div style="color:#64748b; font-size:0.82rem;">{meta_str}</div>
+                </div>
+                <div style="flex:2; min-width:180px;">
+                    <div style="color:#475569; font-size:0.85rem; font-style:italic;">{escape(txn.get('one_line_reason', ''))}</div>
+                    <div style="font-size:0.78rem; color:#94a3b8;">Risk Score: {txn['risk_score']:.3f}</div>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        # Expand/Collapse toggle button
+        btn_label = tr("collapse_detail", lang) if st.session_state[expand_key] else tr("expand_detail", lang) + " ▸"
+        btn_key = f"btn_{expand_key}"
+        if st.button(btn_label, key=btn_key, use_container_width=True):
+            st.session_state[expand_key] = not st.session_state[expand_key]
+            st.rerun()
+
+        # Expanded detail panel
+        if st.session_state[expand_key]:
+            st.markdown('<div class="aml-txn-detail">', unsafe_allow_html=True)
+
+            # Compute SHAP on-demand (only when expanded)
+            with st.spinner("Computing detailed explanation..."):
+                row = build_model_row(
+                    txn["amount"],
+                    txn["payment_currency"],
+                    txn["received_currency"],
+                    txn["sender_location"],
+                    txn["receiver_location"],
+                    txn["payment_type"],
+                    txn["hour"],
+                    txn["fan_in_count"],
+                    txn["fan_out_count"],
+                    txn["Transaction Pattern"],
+                )
+                explanation = get_explanation(row, lang)
+
+            # Mini result banner
+            render_result_banner(txn["risk_level"], txn["risk_score"], lang)
+
+            # Why-flagged summary
+            if txn["risk_level"] != "low":
+                st.subheader(tr("why_flagged_summary", lang))
+                st.caption(tr("why_flagged_summary_caption", lang))
+                render_why_summary(explanation, lang)
+
+            # Action steps
+            render_action_steps(txn["risk_level"], lang)
+
+            # Quick transaction details
+            detail_cols1 = st.columns(3)
+            detail_cols1[0].metric(tr("amount", lang), f"{txn['amount']:,.2f} {txn['payment_currency']}")
+            detail_cols1[1].metric(tr("sender_account", lang), txn["sender_name"])
+            detail_cols1[2].metric(tr("receiver_account", lang), txn["receiver_name"])
+
+            detail_cols2 = st.columns(3)
+            detail_cols2[0].metric(tr("payment_type", lang), txn["payment_type"])
+            detail_cols2[1].metric(tr("sender_location", lang), txn["sender_location"])
+            detail_cols2[2].metric(tr("receiver_location", lang), txn["receiver_location"])
+
+            # Full STR Report (collapsed by default)
+            if txn["risk_level"] != "low":
+                with st.expander(tr("report_label", lang), expanded=False):
+                    try:
+                        priority, deadline, priority_reason = get_priority_for_level(
+                            txn["risk_level"], lang,
+                            screening_result=no_screening_result(),
+                            sender_profile=empty_kyc_profile(txn["sender_account"]),
+                            receiver_profile=empty_kyc_profile(txn["receiver_account"]),
+                        )
+                        report = generate_str(
+                            sender_account=txn["sender_account"],
+                            receiver_account=txn["receiver_account"],
+                            sender_name=txn["sender_name"],
+                            receiver_name=txn["receiver_name"],
+                            row=row.iloc[0],
+                            risk_score=txn["risk_score"],
+                            risk_level_label=tr(txn["risk_level"], lang),
+                            triggered_rules=[],
+                            relationship_label=tr("existing_customer", lang),
+                            transfer_category_label=tr("other_transaction", lang),
+                            hkd_amount=txn["amount"],
+                            screening_result=no_screening_result(),
+                            sender_profile=empty_kyc_profile(txn["sender_account"]),
+                            receiver_profile=empty_kyc_profile(txn["receiver_account"]),
+                            explanation=explanation,
+                            priority=priority,
+                            deadline=deadline,
+                            priority_reason=priority_reason,
+                            lang=lang,
+                        )
+                        st.text_area(tr("report_label", lang), report, height=400, key=f"str_report_{session_key_prefix}_{original_idx}")
+                    except Exception:
+                        st.info("Report generation skipped for this transaction.")
+
+            st.markdown('</div>', unsafe_allow_html=True)
+
+
+# =========================
 # 7. UI
 # =========================
 language_name = st.sidebar.selectbox("Language / 語言", list(LANGUAGES.keys()), index=0)
 lang = LANGUAGES[language_name]
 
-st.sidebar.header(tr("module_subscription", lang))
-st.sidebar.caption(tr("module_subscription_note", lang))
-enabled_modules = {
-    "kyc": st.sidebar.checkbox(tr("module_kyc", lang), value=True),
-    "transaction_monitoring": st.sidebar.checkbox(
-        tr("module_transaction_monitoring", lang),
-        value=True,
-    ),
-    "sanctions": st.sidebar.checkbox(tr("module_sanctions", lang), value=True),
-    "str": st.sidebar.checkbox(tr("module_str", lang), value=True),
-    "manual_review": st.sidebar.checkbox(tr("module_manual_review", lang), value=True),
-}
+# Initialize thresholds with defaults (referenced by sidebar form before expander runs)
+alert_threshold = DEFAULT_ALERT_THRESHOLD
+high_threshold = DEFAULT_HIGH_THRESHOLD
+critical_threshold = DEFAULT_CRITICAL_THRESHOLD
 
-render_hero(lang)
-
+# --- Load data ---
 sample_transactions = build_sample_transactions(raw_df)
 sanctions_df = load_sanctions_data()
 kyc_df = load_kyc_profiles()
 
-tab1, tab2, tab3 = st.tabs([
-    tr("tab_analysis", lang),
-    tr("tab_summary", lang),
-    tr("tab_doc", lang)
-])
+# --- Sidebar: Transaction Input Form ---
+st.sidebar.markdown(f"### ✍️ {tr('sidebar_form_title', lang)}")
+st.sidebar.caption(tr("sidebar_form_desc", lang))
 
+sample_options = {
+    tr("sample_normal", lang): "normal",
+    tr("sample_cross_border", lang): "cross_border",
+    tr("sample_laundering", lang): "laundering",
+}
+selected_sample_label = st.sidebar.selectbox(
+    tr("sample_header", lang),
+    list(sample_options.keys()),
+    key="sidebar_sample_select",
+)
+sample = sample_transactions[sample_options[selected_sample_label]]
+key_suffix = f"{lang}_sidebar_{sample_options[selected_sample_label]}"
 
-# =========================
-# TAB 1: TRANSACTION ANALYSIS
-# =========================
-with tab1:
-    section_label(tr("sample_header", lang))
-    st.caption(tr("sample_help", lang))
+with st.sidebar.form("transaction_lookup_form"):
+    amount = st.number_input(
+        tr("amount", lang), min_value=0.0, value=float(sample["Amount"]),
+        step=100.0, key=f"sb_amount_{key_suffix}",
+    )
+    sender_name = st.text_input(
+        tr("sender_name", lang), value=str(sample.get("Sender_name", "")),
+        key=f"sb_sname_{key_suffix}",
+    )
+    receiver_name = st.text_input(
+        tr("receiver_name", lang), value=str(sample.get("Receiver_name", "")),
+        key=f"sb_rname_{key_suffix}",
+    )
+    sender_loc = st.selectbox(
+        tr("sender_location", lang), encoders["Sender_bank_location"].classes_,
+        index=option_index(encoders["Sender_bank_location"].classes_, sample["Sender_bank_location"]),
+        key=f"sb_sloc_{key_suffix}",
+    )
+    receiver_loc = st.selectbox(
+        tr("receiver_location", lang), encoders["Receiver_bank_location"].classes_,
+        index=option_index(encoders["Receiver_bank_location"].classes_, sample["Receiver_bank_location"]),
+        key=f"sb_rloc_{key_suffix}",
+    )
+    payment_type = st.selectbox(
+        tr("payment_type", lang), encoders["Payment_type"].classes_,
+        index=option_index(encoders["Payment_type"].classes_, sample["Payment_type"]),
+        key=f"sb_ptype_{key_suffix}",
+    )
+    payment_currency = st.selectbox(
+        tr("payment_currency", lang), encoders["Payment_currency"].classes_,
+        index=option_index(encoders["Payment_currency"].classes_, sample["Payment_currency"]),
+        key=f"sb_pcur_{key_suffix}",
+    )
+    received_currency = st.selectbox(
+        tr("received_currency", lang), encoders["Received_currency"].classes_,
+        index=option_index(encoders["Received_currency"].classes_, sample["Received_currency"]),
+        key=f"sb_rcur_{key_suffix}",
+    )
+    hour = st.slider(tr("hour", lang), 0, 23, int(sample["hour"]), key=f"sb_hour_{key_suffix}")
 
-    sample_options = {
-        tr("sample_normal", lang): "normal",
-        tr("sample_cross_border", lang): "cross_border",
-        tr("sample_laundering", lang): "laundering",
+    submitted = st.form_submit_button(tr("submit_transaction", lang), use_container_width=True)
+
+    if submitted:
+        with st.spinner(tr("analyzing", lang)):
+            row = build_model_row(
+                amount, payment_currency, received_currency,
+                sender_loc, receiver_loc, payment_type,
+                hour, int(sample.get("fan_in_count", 0)),
+                int(sample.get("fan_out_count", 0)),
+                str(sample.get("Transaction Pattern", "normal_flow")),
+            )
+            risk_score = float(scoring_model.predict_proba(row)[0][1])
+            risk_level = get_risk_level(risk_score, alert_threshold, high_threshold, critical_threshold)
+            sender_account_val = str(sample.get("Sender_account", "MANUAL"))
+            receiver_account_val = str(sample.get("Receiver_account", "MANUAL"))
+
+            # Unique negative index using a session-level counter
+            if "manual_txn_counter" not in st.session_state:
+                st.session_state["manual_txn_counter"] = 0
+            st.session_state["manual_txn_counter"] += 1
+            new_txn = {
+                "index": -st.session_state["manual_txn_counter"],
+                "risk_score": risk_score,
+                "risk_level": risk_level,
+                "amount": float(amount),
+                "sender_account": sender_account_val,
+                "receiver_account": receiver_account_val,
+                "sender_name": str(sender_name),
+                "receiver_name": str(receiver_name),
+                "payment_type": str(payment_type),
+                "payment_currency": str(payment_currency),
+                "received_currency": str(received_currency),
+                "sender_location": str(sender_loc),
+                "receiver_location": str(receiver_loc),
+                "time": datetime.now().strftime("%H:%M"),
+                "date": datetime.now().strftime("%Y-%m-%d"),
+                "one_line_reason": "",
+                "is_laundering": 0,
+                "hour": int(hour),
+                "fan_in_count": int(sample.get("fan_in_count", 0)),
+                "fan_out_count": int(sample.get("fan_out_count", 0)),
+                "Transaction Pattern": str(sample.get("Transaction Pattern", "normal_flow")),
+            }
+            if "manual_transactions" not in st.session_state:
+                st.session_state["manual_transactions"] = []
+            st.session_state["manual_transactions"].insert(0, new_txn)
+            st.sidebar.success(tr("result_added", lang))
+
+# --- Sidebar: Advanced Settings (collapsed by default) ---
+with st.sidebar.expander(tr("advanced_settings", lang), expanded=False):
+    st.header(tr("module_subscription", lang))
+    st.caption(tr("module_subscription_note", lang))
+    enabled_modules = {
+        "kyc": st.checkbox(tr("module_kyc", lang), value=True),
+        "transaction_monitoring": st.checkbox(
+            tr("module_transaction_monitoring", lang),
+            value=True,
+        ),
+        "sanctions": st.checkbox(tr("module_sanctions", lang), value=True),
+        "str": st.checkbox(tr("module_str", lang), value=True),
+        "manual_review": st.checkbox(tr("module_manual_review", lang), value=True),
     }
-    selected_sample_label = st.selectbox(
-        tr("sample_header", lang),
-        list(sample_options.keys()),
-        label_visibility="collapsed",
-    )
-    sample = sample_transactions[sample_options[selected_sample_label]]
 
-    preview_cols = st.columns(4)
-    preview_cols[0].metric(tr("amount", lang), f"{float(sample['Amount']):,.2f}")
-    preview_cols[1].metric(tr("sender_location", lang), sample["Sender_bank_location"])
-    preview_cols[2].metric(tr("receiver_location", lang), sample["Receiver_bank_location"])
-    preview_cols[3].metric(tr("payment_type", lang), sample["Payment_type"])
-
-    st.info(tr("manual_entry", lang))
-    section_label(tr("input_header", lang))
-
-    col1, col2 = st.columns(2)
-    key_suffix = f"{lang}_{sample_options[selected_sample_label]}"
-
-    with col1:
-        sender_account = st.text_input(
-            tr("sender_account", lang),
-            value=str(sample["Sender_account"]),
-            key=f"sender_{key_suffix}",
-        )
-        sender_name = st.text_input(
-            tr("sender_name", lang),
-            value=str(sample["Sender_name"]),
-            key=f"sender_name_{key_suffix}",
-        )
-        receiver_account = st.text_input(
-            tr("receiver_account", lang),
-            value=str(sample["Receiver_account"]),
-            key=f"receiver_{key_suffix}",
-        )
-        receiver_name = st.text_input(
-            tr("receiver_name", lang),
-            value=str(sample["Receiver_name"]),
-            key=f"receiver_name_{key_suffix}",
-        )
-
-        amount = st.number_input(
-            tr("amount", lang),
-            min_value=0.0,
-            value=float(sample["Amount"]),
-            step=100.0,
-            key=f"amount_{key_suffix}",
-        )
-
-        hkd_amount = st.number_input(
-            tr("hkd_equivalent_amount", lang),
-            min_value=0.0,
-            value=float(sample["Amount"]),
-            step=1000.0,
-            key=f"hkd_amount_{key_suffix}",
-        )
-
-        hour = st.slider(
-            tr("hour", lang),
-            0,
-            23,
-            int(sample["hour"]),
-            key=f"hour_{key_suffix}",
-        )
-
-    with col2:
-        payment_type = st.selectbox(
-            tr("payment_type", lang),
-            encoders["Payment_type"].classes_,
-            index=option_index(encoders["Payment_type"].classes_, sample["Payment_type"]),
-            key=f"payment_type_{key_suffix}",
-        )
-
-        relationship_options = {
-            tr("existing_customer", lang): "existing_customer",
-            tr("occasional_non_customer", lang): "occasional_non_customer",
-        }
-        relationship_label = st.selectbox(
-            tr("relationship_status", lang),
-            list(relationship_options.keys()),
-            key=f"relationship_{key_suffix}",
-        )
-        relationship_status = relationship_options[relationship_label]
-
-        transfer_category_options = {
-            tr("other_transaction", lang): "other_transaction",
-            tr("wire_transfer", lang): "wire_transfer",
-            tr("virtual_asset_transfer", lang): "virtual_asset_transfer",
-        }
-        transfer_category_label = st.selectbox(
-            tr("transfer_category", lang),
-            list(transfer_category_options.keys()),
-            key=f"transfer_category_{key_suffix}",
-        )
-        transfer_category = transfer_category_options[transfer_category_label]
-
-        sender_loc = st.selectbox(
-            tr("sender_location", lang),
-            encoders["Sender_bank_location"].classes_,
-            index=option_index(encoders["Sender_bank_location"].classes_, sample["Sender_bank_location"]),
-            key=f"sender_loc_{key_suffix}",
-        )
-
-        receiver_loc = st.selectbox(
-            tr("receiver_location", lang),
-            encoders["Receiver_bank_location"].classes_,
-            index=option_index(encoders["Receiver_bank_location"].classes_, sample["Receiver_bank_location"]),
-            key=f"receiver_loc_{key_suffix}",
-        )
-
-        payment_currency = st.selectbox(
-            tr("payment_currency", lang),
-            encoders["Payment_currency"].classes_,
-            index=option_index(encoders["Payment_currency"].classes_, sample["Payment_currency"]),
-            key=f"payment_currency_{key_suffix}",
-        )
-
-        received_currency = st.selectbox(
-            tr("received_currency", lang),
-            encoders["Received_currency"].classes_,
-            index=option_index(encoders["Received_currency"].classes_, sample["Received_currency"]),
-            key=f"received_currency_{key_suffix}",
-        )
-        fan_in_count = st.number_input(
-            tr("fan_in", lang),
-            min_value=0,
-            value=int(sample["fan_in_count"]),
-            step=1,
-            key=f"fan_in_{key_suffix}",
-        )
-
-        fan_out_count = st.number_input(
-            tr("fan_out", lang),
-            min_value=0,
-            value=int(sample["fan_out_count"]),
-            step=1,
-            key=f"fan_out_{key_suffix}",
-        )
-
-        transaction_pattern = st.selectbox(
-            tr("transaction_pattern", lang),
-            encoders["Transaction Pattern"].classes_,
-            index=option_index(encoders["Transaction Pattern"].classes_, sample["Transaction Pattern"]),
-            key=f"transaction_pattern_{key_suffix}",
-        )
-
-    if enabled_modules["kyc"]:
-        sender_profile = get_kyc_profile(sender_account, kyc_df)
-        receiver_profile = get_kyc_profile(receiver_account, kyc_df)
-        section_label(tr("entity_view", lang))
-        st.caption(tr("kyc_link_note", lang))
-        render_profile_card(tr("sender_account", lang), sender_profile, lang)
-        render_profile_card(tr("receiver_account", lang), receiver_profile, lang)
-    else:
-        sender_profile = empty_kyc_profile(sender_account)
-        receiver_profile = empty_kyc_profile(receiver_account)
-        section_label(tr("entity_view", lang))
-        st.info(tr("module_disabled", lang))
-
-    section_label(tr("transaction_view", lang))
-
-    st.sidebar.header(tr("threshold_settings", lang))
-    alert_threshold = st.sidebar.slider(
+    st.header(tr("threshold_settings", lang))
+    alert_threshold = st.slider(
         tr("alert_threshold", lang),
-        min_value=0.0,
-        max_value=1.0,
-        value=DEFAULT_ALERT_THRESHOLD,
-        step=0.05
+        min_value=0.0, max_value=1.0, value=DEFAULT_ALERT_THRESHOLD, step=0.05
     )
-
-    high_threshold = st.sidebar.slider(
+    high_threshold = st.slider(
         tr("high_threshold", lang),
-        min_value=0.0,
-        max_value=1.0,
-        value=DEFAULT_HIGH_THRESHOLD,
-        step=0.05
+        min_value=0.0, max_value=1.0, value=DEFAULT_HIGH_THRESHOLD, step=0.05
     )
-
-    critical_threshold = st.sidebar.slider(
+    critical_threshold = st.slider(
         tr("critical_threshold", lang),
-        min_value=0.0,
-        max_value=1.0,
-        value=DEFAULT_CRITICAL_THRESHOLD,
-        step=0.05
+        min_value=0.0, max_value=1.0, value=DEFAULT_CRITICAL_THRESHOLD, step=0.05
     )
 
     if not alert_threshold < high_threshold < critical_threshold:
-        st.sidebar.warning(
+        st.warning(
             "請保持門檻順序：警示 < 高風險 < Critical"
             if lang == "zh"
             else "Keep thresholds ordered: alert < high < critical"
         )
 
-    st.sidebar.markdown(tr("priority_logic", lang))
+    st.markdown(tr("priority_logic", lang))
 
-    if st.button(tr("analyze", lang)):
+# =========================
+# MAIN AREA: Transaction Queue Dashboard
+# =========================
 
-        with st.spinner(tr("analyzing", lang)):
+# Pre-compute feature importance for one-line reasons (cached)
+# Build _X_sample from raw_df (not empty X_train schema) so SHAP has actual data
+_sample_rows = []
+for _idx in range(min(200, len(raw_df))):
+    try:
+        _r = raw_df.iloc[_idx]
+        _row = build_model_row(
+            amount=float(_r.get("Amount", 0)),
+            payment_currency=str(_r.get("Payment_currency", "")),
+            received_currency=str(_r.get("Received_currency", str(_r.get("Payment_currency", "")))),
+            sender_loc=str(_r.get("Sender_bank_location", "")),
+            receiver_loc=str(_r.get("Receiver_bank_location", "")),
+            payment_type=str(_r.get("Payment_type", "")),
+            hour=12,
+            fan_in_count=0,
+            fan_out_count=0,
+            transaction_pattern="normal_flow",
+        )
+        _sample_rows.append(_row.iloc[0])
+    except Exception:
+        continue
+_X_sample = pd.DataFrame(_sample_rows) if _sample_rows else X_train.reindex(columns=X_train.columns).iloc[:1]
+feature_importance = get_feature_importance_order(model, _X_sample)
 
-            row = build_model_row(
-                amount,
-                payment_currency,
-                received_currency,
-                sender_loc,
-                receiver_loc,
-                payment_type,
-                hour,
-                fan_in_count,
-                fan_out_count,
-                transaction_pattern,
-            )
-            if enabled_modules["transaction_monitoring"]:
-                risk_score = scoring_model.predict_proba(row)[0][1]
-                model_risk_level = get_risk_level(
-                    risk_score,
-                    alert_threshold,
-                    high_threshold,
-                    critical_threshold,
-                )
-            else:
-                risk_score = 0.0
-                model_risk_level = "low"
-
-            if enabled_modules["sanctions"]:
-                sender_screening_name = profile_name(sender_profile, sender_name)
-                receiver_screening_name = profile_name(receiver_profile, receiver_name)
-                screening_result = screen_sanctions(
-                    sender_screening_name,
-                    receiver_screening_name,
-                    sanctions_df,
-                )
-            else:
-                screening_result = no_screening_result()
-
-            risk_level = model_risk_level
-            if enabled_modules["sanctions"]:
-                risk_level = apply_sanction_override(risk_level, screening_result)
-            if enabled_modules["kyc"]:
-                risk_level = apply_kyc_override(
-                    risk_level,
-                    sender_profile,
-                    receiver_profile,
-                )
-            triggered_rules = evaluate_hk_rules(
-                hkd_amount,
-                relationship_status,
-                transfer_category,
-                lang,
-            )
-            risk_level = apply_rules_override(risk_level, triggered_rules)
-            risk_level_label = tr(risk_level, lang)
-            screening_result_label = screening_label(screening_result, lang)
-            st.session_state["last_analysis"] = {
-                "sender_account": sender_account,
-                "receiver_account": receiver_account,
-                "risk_score": float(risk_score),
-                "original_risk_level": risk_level,
-                "current_risk_level": risk_level,
-                "screening_status": screening_result["status"],
-                "triggered_rules": ",".join([rule["code"] for rule in triggered_rules]),
-                "analysis_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            }
-
-        score_col, level_col, screening_col = st.columns(3)
-        score_col.metric(tr("risk_score", lang), f"{risk_score:.3f}")
-        level_col.metric(tr("risk_level", lang), risk_level_label)
-        screening_col.metric(tr("screening_result", lang), screening_result_label)
-        risk_badge(risk_level, risk_level_label)
-        st.caption(tr("score_note", lang))
-        st.caption(tr("screening_note", lang))
-
-        section_label(tr("rules_engine", lang))
-        st.caption(tr("rules_note", lang))
-        if triggered_rules:
-            for rule in triggered_rules:
-                st.warning(f"{rule['title']}: {rule['action']}")
+# Build transaction queue from model bundle sample data
+sample_data_df = raw_df
+queue_size = min(80, len(sample_data_df))
+txn_dicts = []
+for idx in range(queue_size):
+    try:
+        txn_row = sample_data_df.iloc[idx]
+        txn_time = txn_row.get("Time", "")
+        if hasattr(txn_time, 'hour'):
+            txn_hour = int(txn_time.hour)
         else:
-            st.success(tr("rules_clear", lang))
+            txn_hour = 12
 
-        if enabled_modules["sanctions"]:
-            section_label(tr("sanction_screening", lang))
-            best_match = screening_result["best_match"]
-            st.write(screening_action(screening_result, lang))
-            screen_cols = st.columns(4)
-            screen_cols[0].metric(tr("matched_party", lang), party_display(best_match["party"], lang))
-            screen_cols[1].metric(tr("matched_name", lang), best_match["matched_name"] or "N/A")
-            screen_cols[2].metric(tr("match_score", lang), best_match["score"])
-            screen_cols[3].metric(tr("risk_type", lang), best_match["risk_type"] or "N/A")
-        else:
-            section_label(tr("sanction_screening", lang))
-            st.info(tr("module_disabled", lang))
+        txn_dicts.append({
+            "Amount": float(txn_row.get("Amount", 0)),
+            "Payment_currency": str(txn_row.get("Payment_currency", "")),
+            "Received_currency": str(txn_row.get("Received_currency", "")),
+            "Sender_bank_location": str(txn_row.get("Sender_bank_location", "")),
+            "Receiver_bank_location": str(txn_row.get("Receiver_bank_location", "")),
+            "Payment_type": str(txn_row.get("Payment_type", "")),
+            "Sender_account": str(txn_row.get("Sender_account", "")),
+            "Receiver_account": str(txn_row.get("Receiver_account", "")),
+            "Time": txn_row.get("Time", ""),
+            "Date": txn_row.get("Date", ""),
+            "hour": txn_hour,
+            "Is_laundering": int(txn_row.get("Is_laundering", 0)),
+            "fan_in_count": int(txn_row.get("fan_in_count", 0)) if "fan_in_count" in txn_row else 0,
+            "fan_out_count": int(txn_row.get("fan_out_count", 0)) if "fan_out_count" in txn_row else 0,
+            "Transaction Pattern": str(txn_row.get("Transaction Pattern", "normal_flow")),
+            "Sender_name": f"Acct_{str(txn_row.get('Sender_account', ''))[:8]}",
+            "Receiver_name": f"Acct_{str(txn_row.get('Receiver_account', ''))[:8]}",
+        })
+    except Exception:
+        continue
 
-        if risk_level == "low":
-            st.success(tr("no_alert", lang))
-            st.info(tr("no_alert_explain", lang))
+# Batch score
+with st.spinner("Loading transaction queue..."):
+    queue_results = batch_score_transactions(
+        txn_dicts, scoring_model, encoders, X_train.columns,
+        lang, alert_threshold, high_threshold, critical_threshold,
+        feature_importance_order=feature_importance,
+    )
 
-        else:
-            st.error(tr("alert", lang))
+# Prepend manual transactions from sidebar
+if "manual_transactions" in st.session_state and st.session_state["manual_transactions"]:
+    for mt in st.session_state["manual_transactions"]:
+        queue_results.insert(0, mt)
 
-            priority, deadline, priority_reason = get_priority_for_level(
-                risk_level,
-                lang,
-                screening_result,
-                sender_profile,
-                receiver_profile,
-            )
-
-            explanation = get_explanation(row, lang)
-
-            col_a, col_b, col_c, col_d = st.columns(4)
-            col_a.metric(tr("risk_level", lang), risk_level_label)
-            col_b.metric(tr("priority", lang), priority)
-            col_c.metric(tr("deadline", lang), deadline.strftime("%Y-%m-%d %H:%M"))
-            col_d.metric(tr("priority_reason", lang), priority_reason)
-
-            section_label(tr("why_flagged", lang))
-            st.caption(tr("plain_explanation_intro", lang))
-
-            for item in explanation:
-                impact_text = f"{item['impact']:.3f}"
-
-                if item["impact"] > 0:
-                    st.error(
-                        f"{item['icon']} **{item['feature_label']}** = `{item['value']}`\n\n"
-                        f"{tr('impact', lang)}: `{impact_text}` | {item['direction']}"
-                    )
-                else:
-                    st.success(
-                        f"{item['icon']} **{item['feature_label']}** = `{item['value']}`\n\n"
-                        f"{tr('impact', lang)}: `{impact_text}` | {item['direction']}"
-                    )
-
-            if enabled_modules["str"]:
-                report = generate_str(
-                    sender_account=sender_account,
-                    receiver_account=receiver_account,
-                    sender_name=sender_name,
-                    receiver_name=receiver_name,
-                    row=row.iloc[0],
-                risk_score=risk_score,
-                risk_level_label=risk_level_label,
-                triggered_rules=triggered_rules,
-                relationship_label=relationship_label,
-                transfer_category_label=transfer_category_label,
-                hkd_amount=hkd_amount,
-                screening_result=screening_result,
-                sender_profile=sender_profile,
-                    receiver_profile=receiver_profile,
-                    explanation=explanation,
-                    priority=priority,
-                    deadline=deadline,
-                    priority_reason=priority_reason,
-                    lang=lang
-                )
-
-                st.text_area(tr("report_label", lang), report, height=520)
-            else:
-                section_label(tr("report_label", lang))
-                st.info(tr("module_disabled", lang))
-
-    if enabled_modules["manual_review"] and "last_analysis" in st.session_state:
-        section_label(tr("manual_intervention", lang))
-        st.caption(tr("manual_intervention_note", lang))
-
-        analysis = st.session_state["last_analysis"]
-        override_cols = st.columns(3)
-        override_cols[0].metric(
-            tr("original_level", lang),
-            risk_level_display(analysis["original_risk_level"], lang),
-        )
-        override_cols[1].metric(
-            tr("final_level", lang),
-            risk_level_display(analysis["current_risk_level"], lang),
-        )
-        override_cols[2].metric(
-            tr("risk_score", lang),
-            f"{analysis['risk_score']:.3f}",
-        )
-
-        manager_col, role_col = st.columns(2)
-        manager_name = manager_col.text_input(tr("manager_name", lang), key="override_manager_name")
-        manager_role = role_col.text_input(
-            tr("manager_role", lang),
-            value="Senior Manager",
-            key="override_manager_role",
-        )
-
-        options = risk_level_options(lang)
-        current_label = risk_level_display(analysis["current_risk_level"], lang)
-        selected_label = st.selectbox(
-            tr("override_level", lang),
-            list(options.keys()),
-            index=list(options.keys()).index(current_label),
-            key="override_level_select",
-        )
-        override_reason = st.text_area(
-            tr("override_reason", lang),
-            key="override_reason_text",
-            height=90,
-        )
-
-        if st.button(tr("apply_override", lang), key="apply_manual_override"):
-            if not manager_name.strip() or not override_reason.strip():
-                st.warning(tr("override_reason_required", lang))
-            else:
-                new_level = options[selected_label]
-                append_audit_record({
-                    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                    "manager_name": manager_name.strip(),
-                    "manager_role": manager_role.strip(),
-                    "sender_account": analysis["sender_account"],
-                    "receiver_account": analysis["receiver_account"],
-                    "original_risk_level": analysis["current_risk_level"],
-                    "new_risk_level": new_level,
-                    "risk_score": f"{analysis['risk_score']:.3f}",
-                    "reason": override_reason.strip(),
-                })
-                st.session_state["last_analysis"]["current_risk_level"] = new_level
-                load_audit_trail.clear()
-                st.success(tr("override_saved", lang))
-
-        section_label(tr("audit_trail", lang))
-        audit_df = load_audit_trail()
-        if audit_df.empty:
-            st.info(tr("audit_trail", lang) + ": N/A")
-        else:
-            st.dataframe(audit_df.tail(10).iloc[::-1], use_container_width=True)
-    elif "last_analysis" in st.session_state:
-        section_label(tr("manual_intervention", lang))
-        st.info(tr("module_disabled", lang))
+# Render Dashboard
+render_dashboard_header(lang)
+render_summary_metrics_bar(queue_results, lang)
+render_transaction_queue(queue_results, lang)
 
 
 # =========================
-# TAB 2: MODEL / DATASET SUMMARY
+# ADMIN SECTION (collapsed at bottom)
 # =========================
-with tab2:
-    section_label(tr("dataset_used", lang))
-    st.write("Dataset: `SAML-D.csv`")
-    st.write(tr("dataset_note", lang))
+st.divider()
+with st.expander(tr("admin_section", lang), expanded=False):
+    st.caption(tr("admin_expander_hint", lang))
 
-    section_label(tr("training_strategy", lang))
+    admin_tab1, admin_tab2 = st.tabs([
+        tr("tab_summary_admin", lang),
+        tr("tab_doc_admin", lang),
+    ])
 
-    col1, col2, col3 = st.columns(3)
+    with admin_tab1:
+        section_label(tr("dataset_used", lang))
+        st.write("Dataset: `SAML-D.csv`")
+        st.write(tr("dataset_note", lang))
 
-    with col1:
-        st.write(tr("balanced_training", lang))
-        st.write(metrics["train_distribution"])
+        section_label(tr("training_strategy", lang))
 
-    with col2:
-        st.write(tr("calibration_distribution", lang))
-        st.write(metrics["calibration_distribution"])
+        col1, col2, col3 = st.columns(3)
 
-    with col3:
-        st.write(tr("real_test", lang))
-        st.write(metrics["test_distribution"])
+        with col1:
+            st.write(tr("balanced_training", lang))
+            st.write(metrics["train_distribution"])
 
-    st.markdown(tr("design_choice", lang))
+        with col2:
+            st.write(tr("calibration_distribution", lang))
+            st.write(metrics["calibration_distribution"])
 
-    section_label(tr("model", lang))
-    st.write(tr("algorithm", lang))
+        with col3:
+            st.write(tr("real_test", lang))
+            st.write(metrics["test_distribution"])
 
-    section_label(tr("metrics", lang))
-    metric_col1, metric_col2, metric_col3, metric_col4 = st.columns(4)
-    metric_col1.metric("Recall", f"{metrics['recall']:.3f}", help=tr("recall_help", lang))
-    metric_col2.metric("Precision", f"{metrics['precision']:.3f}")
-    metric_col3.metric("F1 Score", f"{metrics['f1']:.3f}")
-    metric_col4.metric("AUPRC", f"{metrics['auprc']:.3f}", help="Area Under Precision-Recall Curve")
-    st.caption(tr("recall_help", lang))
-    st.caption(tr("calibration_help", lang))
+        st.markdown(tr("design_choice", lang))
 
-    # Additional operational metrics
-    op_col1, op_col2, op_col3 = st.columns(3)
-    op_col1.metric("Alert Rate", f"{metrics['alert_rate']:.1f}%", help="% of all test transactions flagged as alert")
-    op_col2.metric("Training Samples", f"{metrics['num_train_samples']:,}", help="Number of samples used for model training")
-    op_col3.metric("Sampling Ratio", f"{metrics['sampling_ratio']}:1", help="Normal:Fraud ratio after undersampling")
+        section_label(tr("model", lang))
+        st.write(tr("algorithm", lang))
 
-    st.write(f"{metrics['calibration_method']} | Alert threshold used for evaluation: {metrics['evaluation_threshold']:.2f}")
+        section_label(tr("metrics", lang))
+        metric_col1, metric_col2, metric_col3, metric_col4 = st.columns(4)
+        metric_col1.metric("Recall", f"{metrics['recall']:.3f}", help=tr("recall_help", lang))
+        metric_col2.metric("Precision", f"{metrics['precision']:.3f}")
+        metric_col3.metric("F1 Score", f"{metrics['f1']:.3f}")
+        metric_col4.metric("AUPRC", f"{metrics['auprc']:.3f}", help="Area Under Precision-Recall Curve")
+        st.caption(tr("recall_help", lang))
+        st.caption(tr("calibration_help", lang))
 
-    st.text(tr("classification_report", lang))
-    st.code(metrics["classification_report"])
+        op_col1, op_col2, op_col3 = st.columns(3)
+        op_col1.metric("Alert Rate", f"{metrics['alert_rate']:.1f}%", help="% of all test transactions flagged as alert")
+        op_col2.metric("Training Samples", f"{metrics['num_train_samples']:,}", help="Number of samples used for model training")
+        op_col3.metric("Sampling Ratio", f"{metrics['sampling_ratio']}:1", help="Normal:Fraud ratio after undersampling")
 
+        st.write(f"{metrics['calibration_method']} | Alert threshold used for evaluation: {metrics['evaluation_threshold']:.2f}")
 
-# =========================
-# TAB 3: MVP TEST DOCUMENT
-# =========================
-with tab3:
-    section_label(tr("tab_doc", lang))
-    st.markdown(tr("test_doc", lang))
+        st.text(tr("classification_report", lang))
+        st.code(metrics["classification_report"])
+
+    with admin_tab2:
+        section_label(tr("tab_doc", lang))
+        st.markdown(tr("test_doc", lang))
